@@ -1,0 +1,268 @@
+* {
+	margin:0px;
+	padding:0px;
+}
+html {
+	scroll-behavior:smooth;
+}
+$pismo:Poppins;
+$margina:35px;
+body {
+	font:{
+		family:$pismo;
+	}
+}
+main {
+	background-color:#ededf2;
+}
+@mixin rasporedi{
+	display:flex;
+	justify-content:space-between;
+}
+@mixin rasporedi2 {
+	display:flex;
+	justify-content:space-around;
+}
+.centriraj {
+	@include rasporedi;
+	margin:0px auto;
+	width:85%;
+	height:100%;
+	align-items:center;
+}
+#zaglavlje, main, #pozadina, #dobrodosli, #sadrzaj, #sadrzaj2, #hobiji, #sadrzaj3,  #artikli3, #sadrzaj4, #sadrzaj5, #desno2, footer {
+	width:100%;
+}
+$boja1:linear-gradient(#9cbbed, #c7c7c9);
+#zaglavlje {
+	height:90px;
+	background-image: $boja1;
+	z-index:3;
+}
+ul {
+	list-style:none;
+}
+li {
+	display:inline-block;
+	margin:18px;
+}
+a {
+	text-decoration:none;
+	color:black;
+	font-size:22px;
+	&:hover {
+		color:#4f75b5;
+	}
+}
+#pozadina {
+	height:700px;
+	position:relative;
+	background:{
+		image: url("../img/portfolioPozadina1.jpg");
+		repeat:no-repeat;
+		size:cover;
+		position:center;
+	}
+}
+#dobrodosli {
+	position:absolute;
+	top:45%;
+	text-align:center;
+	font-size:30px;
+	color:black;
+	height:100px;
+	background-color: rgba(255, 255, 255, 0.4);
+	animation:animacija 5s;
+}
+@keyframes animacija {
+	0%  {left:-1450px;}
+	100% {left:0px;}
+}
+#dobrodosli {
+	h1 {
+		margin-top:10px;
+	}
+}
+#sadrzaj, #sadrzaj2, #sadrzaj3, #sadrzaj5 {
+	@include rasporedi2;
+}
+#sadrzaj3 {
+	flex-direction:column;
+}
+#sadrzaj5, footer{
+	margin-top:$margina;
+}
+#sadrzaj,#sadrzaj2, #sadrzaj3, #sadrzaj4 {
+	@extend #sadrzaj5;
+	border-bottom:1px solid #c7c7c9;
+}
+.slika {
+	width:45%;
+	margin-bottom:$margina;
+}
+.tekst {
+	@extend .slika;
+	text-align:justify;
+	line-height: 1.25;
+	font-size:16px;
+	letter-spacing:3px;
+	h2 {
+		font-size:30px;
+		margin-bottom:25px;
+	}
+}
+#sadrzaj3, #sadrzaj4, #sadrzaj5 {
+	h3 {
+		font-size:30px;
+		margin-bottom:25px;
+		text-align:center;
+	}
+}
+#sadrzaj3, #desno2 {
+	text-align:center;
+}
+.projekti {
+	width:25%;
+	margin-bottom:$margina;
+}
+#artikli3, #skill1, #skill2, #skill3 {
+	@include rasporedi;
+}
+#skill1, #skill2, #skill3 {
+	width:100%;
+	height:60px;
+	align-items:center;	
+	border:1px solid black;
+	border-radius:4px;
+	font-size:18px;
+}
+#skill1 {
+	background-color:#9cbbed;
+}
+#skill2 {
+	background-color:#4f75b5;
+}
+#skill3 {
+	background-color:#2057b5;
+	margin-bottom:35px;
+}
+#skill2, #skill3  {
+	margin-top:20px;
+}
+#levoHtml {
+	width:93%;
+}
+#levoCss {
+	width:86%
+}
+#levoPh {
+	width:52%;
+}
+#levoHtml, #levoCss, #levoPh {
+	margin-left:15px;
+}
+#procentiHtml, #procentiCss, #procentiPh {
+	background-color:white;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+#procentiHtml {
+	width:7%;
+}
+#procentiCss {
+	width:14%
+}
+#procentiPh {
+	width:48%;
+}
+
+#forma {
+	width:70%;
+	margin:0px auto;	
+}
+#telefon {
+	width:93%;
+	border:1px solid white;
+	border-radius:4px;
+	font:{
+		size:20px;
+		family:$pismo;
+	}
+	padding:15px 10px;
+	margin-top:20px;
+}
+#poruke {
+	@extend #telefon;
+	resize:none;
+	height:150px;
+}
+input[type=text] {
+	@extend #telefon;
+	width:43%;
+	margin: {
+		left:15px;
+		right:15px;
+	}
+	background-color:white;
+}
+.taster {
+	width:96%;
+	background-color:white;
+	border:1px solid white;
+	border-radius:4px;
+	height:50px;
+	margin-top:20px;
+	margin-bottom:20px;
+	font-size:30px;
+	&:hover {
+		background-image: $boja1;
+	}
+}
+.topBtn {
+	font-size:30px;
+}
+footer {
+	background-image: linear-gradient(#c7c7c9,/*#c7c9cc*/ #9cbbed /*#bebec6*/);
+	height:85px;
+	ul {
+		li {
+			margin:8px;
+			a {
+				@extend .topBtn;
+				color:black;
+			}
+		}
+	}
+	.info {
+		p {
+			a {
+				font-size:18px;
+			}
+		}
+	}
+}
+#sadrzaj4{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+}
+#vestine{
+	display:flex;
+	flex-direction:column;
+	width:100%;
+	margin-bottom:$margina;
+		#skill1,#skill2,#skill3{
+			margin:10px;
+			width:100%;
+		}
+	
+}
+#naslov{
+	width:100%;
+}
+/*#sadrzaj2, #sadrzaj3, #sadrzaj4, #sadrzaj5 {
+	height:100vh;
+}*/

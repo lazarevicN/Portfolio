@@ -1,0 +1,241 @@
+$sirina:100%;
+@mixin kolonski {
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+@mixin centar {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+@mixin prebaci {
+	display: flex;
+	flex-wrap: wrap;
+}
+@media screen and (max-width:1200px){
+	#zaglavlje {
+		nav {
+			font:{
+				size:5px;
+			}
+			}
+		}
+		#pozadina {
+			width:$sirina;
+		}
+		#sadrzaj2 {
+		.slika {
+			@include kolonski;
+			img {
+				max-width:$sirina;
+			}	
+			}
+		}
+		#artikli3 {
+		width:$sirina;
+		.projekti {
+			img {
+				max-width:$sirina;
+			}
+		}	
+	}
+	input[type=text] {
+		width:40.5%;
+	}
+	#poruke, #telefon {
+		box-sizing:border-box;
+	}
+	.taster {
+		width:93%;
+	}
+}
+@media screen and (max-width:992px) {
+	#zaglavlje {
+		height:auto;
+		.centriraj {
+			@include kolonski;
+		}
+		nav {
+			width:$sirina;
+			display:flex;
+			justify-content:space-around;
+			ul {
+				li {
+					margin:8px;
+				}
+			}
+		}
+	}
+	#logo {
+		width:$sirina;
+		@include centar;
+	}
+	#pozadina {
+		#dobrodosli {
+			width:$sirina;
+			height:auto;
+		}
+	}
+	#sadrzaj {
+		.slika {
+			@include kolonski;
+		}
+	}
+	#artikli3 {
+		@include prebaci;
+		.projekti {
+			width:50%;
+			img {
+				max-width:$sirina;
+			}
+		}	
+	}
+	input[type=text] {
+		width:93%;
+		box-sizing:border-box;
+	}
+	#poruke {
+		box-sizing:border-box;
+	}
+	footer {
+		height:auto;
+		width:$sirina;
+		.centriraj {
+			width:95%;
+		}
+		.info {
+			p{
+				font-size:14px;
+				a{
+					font-size:14px;
+				}
+			}
+			a {
+				font-size:25px;
+			}	
+		}
+	}	
+}
+@media screen and (max-width:768px) {
+	#zaglavlje {
+		height:auto;
+		nav {
+			ul {
+				@include prebaci;
+				@include centar;
+			}
+		}
+	}
+	#pozadina {
+		#dobrodosli {
+				font-size:22px;
+			
+		}
+	}
+	#sadrzaj, #sadrzaj2 {
+		.tekst {
+			font-size:16px;
+			letter-spacing:0px;
+		}
+		h2 {
+			font-size:25px;
+		}
+		}
+	#sadrzaj {
+		img {
+			width:340px;
+		}
+	}
+	#sadrzaj2 {
+		img {
+				max-width:$sirina;
+			}			
+	}
+	#sadrzaj3, #sadrzaj4, #sadrzaj5 {
+		h3 {
+			font-size:25px;
+		}
+	}
+	#forma {
+		width:$sirina;
+	}
+	footer {
+		height:120px;
+		.centriraj {
+			@include prebaci;
+		}
+	}	
+}
+@media screen and (max-width:480px) {
+	#zaglavlje {
+		height:auto;
+		nav {
+			ul {
+				@include kolonski;
+			}
+		}
+	}
+	#pozadina {
+		#dobrodosli {
+				font-size:20px;
+			
+		}
+	}
+	#sadrzaj, #sadrzaj2 {
+		@include kolonski;
+		.tekst {
+			width:$sirina;
+			line-height:1.40;
+			text-align:center;
+		}
+	}
+	#sadrzaj {
+		img {
+			width:320px;
+			
+		}
+	}
+	#sadrzaj2 {
+		img {
+			display:none;
+		}
+		.tekst{
+			margin-bottom:0px;
+		}
+	}
+	#artikli3 {
+		@include kolonski;
+		.projekti {
+			border:2px solid #c7c7c9;
+			border-radius:5px;
+			width:$sirina;
+			figure {
+				figcaption {
+					font-size:15px;
+				}
+			}
+		}
+	}
+	#skill1, #skill2, #skill3 {
+		font-size:13px;
+	}
+	#telefon, #poruke, input[type=text]  {
+		font-size:17px;
+		width:91%;
+	}
+	.taster {
+		width:91%;
+	}
+	footer {
+		height:auto;
+		.centriraj {
+			@include kolonski;
+		}
+		.info {
+			margin-top:12px;
+			text-align:center;
+		}
+	}
+}
